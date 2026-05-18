@@ -169,6 +169,42 @@ nav .container {
 
 .nav-toggle svg { display: block; }
 
+/* ---- Dropdown Menu ---- */
+.nav-links li.has-dropdown {
+    position: relative;
+}
+
+.nav-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface-1);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-md);
+    padding: 8px 0;
+    min-width: 200px;
+    box-shadow: var(--shadow-elevated);
+    z-index: 100;
+}
+
+.nav-links li.has-dropdown:hover .nav-dropdown,
+.nav-links li.has-dropdown:focus-within .nav-dropdown {
+    display: block;
+}
+
+.nav-dropdown a {
+    display: block;
+    padding: 10px 16px;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.nav-dropdown a:hover {
+    background: var(--surface-2);
+}
+
 @media (max-width: 860px) {
     .nav-toggle { display: flex; }
 
@@ -191,6 +227,27 @@ nav .container {
         padding: 12px 16px;
         font-size: 15px;
         border-radius: var(--radius-sm);
+    }
+
+    /* Mobile dropdown */
+    .nav-links li.has-dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-dropdown {
+        position: static;
+        transform: none;
+        background: var(--surface-2);
+        border: none;
+        border-radius: var(--radius-sm);
+        box-shadow: none;
+        padding: 4px 0 4px 16px;
+        margin-bottom: 4px;
+    }
+
+    .nav-dropdown a {
+        padding: 10px 16px;
     }
 }
 
@@ -1027,4 +1084,141 @@ footer .tagline {
 @media (max-width: 480px) {
     .styles-grid { grid-template-columns: 1fr; }
     .hero { padding: 130px 0 70px; }
+}
+
+/* ============================================================
+   Case Studies Page
+   ============================================================ */
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.case-study-card {
+    background: var(--surface-1);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    transition: all 0.25s;
+}
+
+.case-study-card:hover {
+    border-color: rgba(37,99,235,0.3);
+    box-shadow: var(--shadow-glow);
+}
+
+.case-study-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin: 16px 0 10px;
+    font-weight: 700;
+}
+
+.case-study-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.case-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    letter-spacing: 0.02em;
+    margin-right: 8px;
+    margin-bottom: 4px;
+}
+
+.tag-industry {
+    background: rgba(14,165,233,0.12);
+    color: var(--sky-light);
+}
+
+.tag-format {
+    background: rgba(167,139,250,0.12);
+    color: #a78bfa;
+}
+
+.btn-sm {
+    padding: 10px 18px;
+    font-size: 13px;
+}
+
+@media (max-width: 860px) {
+    .case-studies-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   Case Studies Preview (index page)
+   ============================================================ */
+.case-studies-preview {
+    background: var(--surface-1);
+    border-top: 1px solid var(--surface-border);
+    border-bottom: 1px solid var(--surface-border);
+}
+
+.case-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.case-preview-card {
+    background: var(--surface-2);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    transition: all 0.25s;
+}
+
+.case-preview-card:hover {
+    border-color: rgba(37,99,235,0.3);
+    transform: translateY(-2px);
+}
+
+.case-preview-tag {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--sky-light);
+    font-family: var(--font-mono);
+    margin-bottom: 12px;
+}
+
+.case-preview-card h4 {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.case-preview-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.case-preview-card a {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sky-light);
+}
+
+.case-preview-card a:hover {
+    color: var(--primary-light);
+}
+
+@media (max-width: 860px) {
+    .case-preview-grid {
+        grid-template-columns: 1fr;
+    }
 }
