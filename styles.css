@@ -1222,3 +1222,110 @@ footer .tagline {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================================
+   Downloads Page
+   ============================================================ */
+.downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.download-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--surface-1);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    transition: all 0.25s;
+}
+
+.download-card:hover {
+    border-color: rgba(37,99,235,0.3);
+    box-shadow: var(--shadow-glow);
+}
+
+.download-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--surface-2);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sky-light);
+    flex-shrink: 0;
+}
+
+.download-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.download-info h3 {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.download-info p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.download-meta {
+    display: flex;
+    gap: 8px;
+    font-size: 11px;
+    font-family: var(--font-mono);
+}
+
+.download-format {
+    background: rgba(14,165,233,0.12);
+    color: var(--sky-light);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.download-size {
+    background: rgba(52,211,153,0.12);
+    color: var(--success);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.download-tag {
+    background: rgba(167,139,250,0.12);
+    color: #a78bfa;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+@media (max-width: 860px) {
+    .downloads-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .download-card {
+        flex-direction: column;
+    }
+
+    .download-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .download-card .btn-sm {
+        width: 100%;
+        justify-content: center;
+    }
+}
